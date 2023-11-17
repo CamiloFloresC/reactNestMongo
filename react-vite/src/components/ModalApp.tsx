@@ -1,4 +1,3 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
@@ -27,15 +26,17 @@ export default function BasicModal({
   component,
   text,
   color,
+  setOpen,
+  open,
 }: {
   component: JSX.Element;
   text: string;
   color: ButtonType;
+  setOpen: (state: boolean) => void;
+  open: boolean;
 }) {
-  const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   return (
     <div>
       <Button onClick={handleOpen} variant="contained" color={color}>

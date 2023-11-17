@@ -9,7 +9,7 @@ export function dateFormat(date: string) {
     second: "2-digit",
     timeZoneName: "short",
   };
-  const dateFormat = new Intl.DateTimeFormat("es-ES", options);
+  const dateFormat = new Intl.DateTimeFormat("en-EN", options);
   const formattedDate = dateFormat.format(newDate);
   return formattedDate;
 }

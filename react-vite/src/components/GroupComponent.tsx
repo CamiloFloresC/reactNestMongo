@@ -4,8 +4,10 @@ import { IGroup } from "../interfaces/Group";
 import BasicModal from "./ModalApp";
 import { FormGroupUpdate } from "./forms/FormGroupUpdate";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useState } from "react";
 
 export const GroupComponent = ({ group }: { group: IGroup }) => {
+  const [open, setOpen] = useState(false);
   return (
     <section className="w-full max-w-2xl h-full flex flex-col border-black border-2 rounded-md p-4 gap-3 justify-between">
       <h2 className="font-bold text-lg">{group.name}</h2>
@@ -14,7 +16,7 @@ export const GroupComponent = ({ group }: { group: IGroup }) => {
           return (
             <section
               className="flex justify-between bg-slate-100 rounded-md my-2"
-              key={app.id}>
+              key={app._id}>
               <article>
                 <article className="flex gap-2">
                   <span className="font-semibold">Name: </span>
@@ -36,6 +38,8 @@ export const GroupComponent = ({ group }: { group: IGroup }) => {
       </section>
       <article className="flex gap-2">
         <BasicModal
+          setOpen={setOpen}
+          open={open}
           component={<FormGroupUpdate />}
           text="Update Group"
           color={"primary"}

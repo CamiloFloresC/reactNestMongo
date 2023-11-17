@@ -1,7 +1,7 @@
 import { IApplication } from "./Application";
 
 export interface IGroup {
-  id: string;
+  _id: string;
   name: string;
   applications: IApplication[];
 }
