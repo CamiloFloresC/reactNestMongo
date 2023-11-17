@@ -17,7 +17,7 @@ export const ApplicationContainer = () => {
     return <p>Loading...</p>;
   }
   return (
-    <>
+    <section className="min-h-[600px]">
       <article className="flex gap-2 p-2 justify-between items-center">
         <SubTitle subtitle="your applications" />
         <BasicModal
@@ -33,6 +33,6 @@ export const ApplicationContainer = () => {
           return <ApplicationComponent key={app._id} application={app} />;
         })}
       </section>
-    </>
+    </section>
   );
 };
