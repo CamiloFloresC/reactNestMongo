@@ -14,7 +14,11 @@ export const ApplicationContainer = () => {
     queryKey: ["applications"],
   });
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <section className="min-h-[600px] grid justify-items-center justify-center w-full">
+        Loading Application...
+      </section>
+    );
   }
   return (
     <section className="min-h-[600px]">

@@ -9,13 +9,13 @@ import { useState } from "react";
 export const GroupComponent = ({ group }: { group: IGroup }) => {
   const [open, setOpen] = useState(false);
   return (
-    <section className="w-full max-w-2xl h-full flex flex-col border-black border-2 rounded-md p-4 gap-3 justify-between">
+    <section className="w-full max-w-2xl h-full flex flex-col border-gray-200 border-2 rounded-md p-4 gap-3 justify-between">
       <h2 className="font-bold text-lg">{group.name}</h2>
-      <section className="min-h-[180px] scroll-auto">
+      <section className="h-[150px] overflow-y-scroll">
         {group.applications.map((app: IApplication) => {
           return (
             <section
-              className="flex justify-between bg-slate-100 rounded-md my-2"
+              className="flex justify-between bg-slate-100 rounded-md my-2 p-1"
               key={app._id}>
               <article>
                 <article className="flex gap-2">

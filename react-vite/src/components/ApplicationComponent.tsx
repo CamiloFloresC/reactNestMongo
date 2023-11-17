@@ -22,7 +22,7 @@ export const ApplicationComponent = ({
     deleteApplication(id)
       .then(() => {
         setTimeout(() => {
-          toast.success("success Delete");
+          toast.success("success delete");
           queryClient.invalidateQueries({
             queryKey: ["applications"],
           });
@@ -31,7 +31,7 @@ export const ApplicationComponent = ({
       .catch(() => toast.error("error"));
   };
   return (
-    <article className="w-full max-w-sm h-full flex flex-col border-black border-2 rounded-md p-4 gap-3">
+    <article className="w-full max-w-sm h-full flex flex-col border-gray-200 border-2 rounded-md p-4 gap-3">
       <h2 className="font-bold">{application.name}</h2>
       <span className="font-light">{dateFormat(application.createdAt)}</span>
       <span>

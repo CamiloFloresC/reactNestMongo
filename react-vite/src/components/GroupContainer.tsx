@@ -13,10 +13,14 @@ export const GroupContainer = () => {
     queryKey: ["groups"],
   });
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <section className="min-h-[600px] grid justify-items-center justify-center w-full">
+        Loading Groups...
+      </section>
+    );
   }
   return (
-    <>
+    <section className="min-h-[600px]">
       <article className="flex gap-2 p-2 justify-between items-center">
         <SubTitle subtitle="your groups" />
         <BasicModal
@@ -32,6 +36,6 @@ export const GroupContainer = () => {
           return <GroupComponent key={group._id} group={group} />;
         })}
       </section>
-    </>
+    </section>
   );
 };
