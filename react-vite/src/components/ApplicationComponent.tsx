@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { deleteApplication } from "../services/Appications";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
+import { NavLink } from "react-router-dom";
 export const ApplicationComponent = ({
   application,
 }: {
@@ -32,7 +33,11 @@ export const ApplicationComponent = ({
   };
   return (
     <article className="w-full max-w-sm h-full flex flex-col border-gray-200 border-2 rounded-md p-4 gap-3">
-      <h2 className="font-bold">{application.name}</h2>
+      <h2 className="font-bold">
+        <NavLink to={`/application/${application._id}`}>
+          {application.name}
+        </NavLink>
+      </h2>
       <span className="font-light">{dateFormat(application.createdAt)}</span>
       <span>
         <span className="font-semibold">grouped:</span>{" "}

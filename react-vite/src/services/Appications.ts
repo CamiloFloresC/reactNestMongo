@@ -6,11 +6,9 @@ export const getApplications = async (): Promise<IApplication[]> => {
   return res.data;
 };
 
-export const getApplicationById = async (
-  id: string
-): Promise<AxiosResponse> => {
+export const getApplicationById = async (id: string): Promise<IApplication> => {
   const res = await axios.get(`http://localhost:3000/applications/${id}`);
-  return res;
+  return res.data;
 };
 
 export const createApplication = async (

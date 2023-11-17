@@ -3,6 +3,7 @@ import App from "../App";
 import { Home } from "../pages/Home";
 import { Applications } from "../pages/Applications";
 import { Group } from "../pages/Groups";
+import { Application } from "../pages/Application";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "/group",
+        element: <Group />,
+      },
+      {
+        path: "/application/:id",
+        element: <Application />,
+      },
+      {
+        path: "/group/:id",
         element: <Group />,
       },
     ],

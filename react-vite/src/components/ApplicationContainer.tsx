@@ -16,7 +16,7 @@ export const ApplicationContainer = () => {
   if (isLoading) {
     return (
       <section className="min-h-[600px] grid justify-items-center justify-center w-full">
-        Loading Application...
+        Loading Applications...
       </section>
     );
   }
