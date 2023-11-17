@@ -4,12 +4,13 @@ import { Home } from "../pages/Home";
 import { Applications } from "../pages/Applications";
 import { Group } from "../pages/Groups";
 import { Application } from "../pages/Application";
+import { Error } from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <section>Error</section>,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -26,10 +27,6 @@ export const router = createBrowserRouter([
       {
         path: "/application/:id",
         element: <Application />,
-      },
-      {
-        path: "/group/:id",
-        element: <Group />,
       },
     ],
   },
